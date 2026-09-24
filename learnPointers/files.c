@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+#include "libs/files.h"
 
 void openFile(
-    char *fileName[],
-    char *mode[],
+    char fileName[],
+    char mode[],
     void (*callback)(void *args[]),
     void *kwArgs) {
     //
@@ -17,6 +20,6 @@ void openFile(
     parameters[0] = file;
     parameters[1] = kwArgs;
 
-    callback(&parameters);
+    callback(parameters);
     fclose(file);
 }

@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "libs/consts.h"
 #include "libs/structs.h"
+#include "libs/students.h"
+#include "libs/utils.h"
 
 void showStudents() {
     printf("Show from pointer function");

@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#ifndef WIN32
+#include <stdio_ext.h>
+#endif
+
+#include "libs/utils.h"
 
 void cleanOutput() {
 #ifdef WIN32
@@ -17,7 +22,7 @@ void pause(char msg[]) {
     printf("\n\n%s\n\n", msg);
     cleanBuffer();
     printf("Pressione enter para continuar!!");
-    int c = getchar();
+    getchar();
     cleanOutput();
 #endif
 }

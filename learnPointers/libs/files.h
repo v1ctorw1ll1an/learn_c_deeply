@@ -7,6 +7,6 @@
 // (*callback): reference to the function that will be called if
 //              the file is successfully opened
 //*kwArgs: array of auxiliary variable references
-void openFile(char mode[], char fileName[], void (*callback)(void *args[]), void *kwArgs[]);
+void openFile(char fileName[], char mode[], void (*callback)(void *args[]), void *kwArgs);
 
 #endif

@@ -2,15 +2,18 @@
 #include <stdlib.h>
 
 #include "libs/consts.h"
+#include "libs/files.h"
 #include "libs/hackRank.h"
+#include "libs/menu.h"
 #include "libs/structs.h"
 #include "libs/students.h"
+#include "libs/utils.h"
 
 void menu() {
     int opcao;
     struct Aluno *aluno = malloc(sizeof(struct Aluno));
-    char *studentName;
-    void (*readStudentVar)(struct Aluno *) = &readStudent;
+    char *studentName = NULL;
+    void (*readStudentVar)(struct Aluno **) = &readStudent;
 
     cleanOutput();
     cleanBuffer();
@@ -24,7 +27,7 @@ void menu() {
         printf("\n# \t\t 1 - Cadastrar Aluno \t\t\t\t#");
         printf("\n# \t\t 2 - Pesquisar Aluno \t\t\t\t#");
         printf("\n# \t\t 3 - callback function \t\t\t\t#");
-        printf("\n# \t\t 3 - Hack Rank \t\t\t\t\t#");
+        printf("\n# \t\t 4 - Hack Rank \t\t\t\t\t#");
         printf("\n# \t\t\t\t\t\t\t\t#");
         printf("\n# \t\t\t\t\t\t\t\t#");
         printf("\n#################################################################");
@@ -72,6 +75,7 @@ void menu() {
                     cleanBuffer();
                     cleanOutput();
                     hackRankChallenges();
+                    break;
                 default:
                     cleanOutput();
                     printf(YELLOW);
@@ -81,5 +85,5 @@ void menu() {
                     break;
             }
         }
-    } while (opcao != 3);
+    } while (opcao != 0);
 }
